@@ -9,13 +9,11 @@ const HomeComp =(props)=>{
        try {
            const value = await AsyncStorage.getItem('loginInfo')
            if(value !== null) {
-               // lấy được dữ liệu
                setloginInfo (   JSON.parse (value)  );
 
 
            }
          } catch(e) {
-           // error reading value
            console.log(e);
          }
    }
@@ -23,7 +21,6 @@ const HomeComp =(props)=>{
 
    React.useEffect(() => {
        const unsubscribe = props.navigation.addListener('focus', () => {
-           // khi màn hình được active thì lệnh trong này hoạt động
           getLoginInfo();
        });
   

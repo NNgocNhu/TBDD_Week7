@@ -8,8 +8,6 @@ const StackDemo = createNativeStackNavigator();
 
 const App = () => {
  return (
-   // Bước 3: Định nghĩa Navigation
-   //Tình huống 1: App chính chỉ có Nav
    <NavigationContainer>
      <StackDemo.Navigator initialRouteName='LoginComp'>
        <StackDemo.Screen name='HomeComp' component={HomeComp} options={{ title: 'Trang chủ' }} />
