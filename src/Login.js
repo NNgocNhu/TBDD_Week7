@@ -25,7 +25,7 @@ const LoginComp =( props )=>{
                return;
            }else{
                let objU = res_login[0];
-               if(objU.passwd != passwd){
+               if(objU.password != passwd){
                    alert("Sai password"); return;
                }else{
                    try {
@@ -37,18 +37,8 @@ const LoginComp =( props )=>{
                        console.log(e);
                      }
                }
-
-
            }
-
-
        })
-
-
-
-
-
-
    }
    return (
        <View style={{ margin:30}} >
