@@ -1,11 +1,10 @@
 {
   "users": [
     {
-      "username": "NgocNhu",
+      "username": "Nhu",
       "password": "123",
       "notes": [
         {
-          "id": 1,
           "title": "Note 1",
           "content": "Content of Note 1.",
           "date": "2023-11-11",
@@ -13,7 +12,6 @@
           "tab": "short term"
         },
         {
-          "id": 2,
           "title": "Note 2",
           "content": "Content of Note 2.",
           "date": "2023-11-12",
@@ -27,7 +25,6 @@
       "password": "123",
       "notes": [
         {
-          "id": 3,
           "title": "Note 3",
           "content": "Content of Note 3.",
           "date": "2023-11-13",
@@ -35,7 +32,6 @@
           "tab": "Done"
         },
         {
-          "id": 4,
           "title": "Note 4",
           "content": "Content of Note 4.",
           "date": "2023-11-14",

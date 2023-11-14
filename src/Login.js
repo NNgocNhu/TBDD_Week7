@@ -1,7 +1,7 @@
-import { View, Text, Button , TextInput} from "react-native";
+import { View, Text, Button , TextInput,Image} from "react-native";
 import { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-const LoginComp =( props )=>{
+const Login =( props )=>{
    const [username, setusername] = useState("");
    const [passwd, setpasswd] = useState("");
    const doLogin = ()=>{
@@ -30,7 +30,7 @@ const LoginComp =( props )=>{
                }else{
                    try {
                        await AsyncStorage.setItem('loginInfo',  JSON.stringify( objU )   );
-                       props.navigation.navigate('HomeComp');
+                       props.navigation.navigate('Home');
 
 
                      } catch (e) {
@@ -41,12 +41,16 @@ const LoginComp =( props )=>{
        })
    }
    return (
-       <View style={{ margin:30}} >
-           <Text>Màn hình đăng nhập</Text>
-           <TextInput placeholder="Username" onChangeText={  (txt)=>{ setusername(txt)} } />
-           <TextInput placeholder="Passwd" onChangeText={  (txt)=>{ setpasswd(txt)} }
-                   textContentType="password" secureTextEntry={true} />
-           <Button title="Login" onPress={doLogin} />
+       <View style={{ margin:30, flex:1, flexDirection:"column", alignItems:'center'}} >
+            <Image style={{height:100, width:'100%', resizeMode:'contain'}} source = {require("../assets/Image 96.png")}/>
+           <Text style={{textAlign:'center', fontSize:40,fontFamily:'Roboto-Bold', margin:20,fontWeight: '700'}}>LOGIN</Text>
+           <TextInput style={{height:40, width:350, borderWidth:1, borderBlockColor:'#ccc'}} placeholder="Username" onChangeText={  (txt)=>{ setusername(txt)} } />
+           <TextInput style={{height:40, width:350, borderWidth:1, borderBlockColor:'#ccc', marginTop:10}}  placeholder="Password" onChangeText={  (txt)=>{ setpasswd(txt)} }
+                   textContentType="password" secureTextEntry={true}  />
+            <View style={{marginTop:30,height:80, width:'100%'}}>  
+                <Button  title="Login" onPress={doLogin} />
+            </View>
+         
 
 
        </View>
@@ -54,4 +58,4 @@ const LoginComp =( props )=>{
 }
 
 
-export default LoginComp;
+export default Login;
